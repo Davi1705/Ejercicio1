@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const UsuarioSchema = require('./Modelos/Usuario.js');
+
 const app = express();
 const router = express.Router();
 app.use(express.urlencoded({ extended: true }));
@@ -14,6 +15,17 @@ mongoose.connect("mongodb+srv://dbDavidmintic:gomar2013@clusterc4g41.7i8el.mongo
 router.get("/",(req, res) => {
     res.send("Este es el inicio de mi primera API")
 });
+
+// Consultar todos
+router.get("/Usuario", (req, res) => {
+    UsuarioSchema.find(function (err, datos){
+        if (err){
+            console.log("Error leyendo los usuarios");
+        }else {
+            res.send(datos);
+        }
+    })
+})
 
 // Insertar
 
