@@ -5,3 +5,10 @@ crear un nuevo paquete:
   
     escribir el archivo para punto de entrada
     entry point: (index.js) server.js
+
+    Crear un nuevo archivo
+      touch server.js
+
+    instalar paquetes
+      npm install express
+    
